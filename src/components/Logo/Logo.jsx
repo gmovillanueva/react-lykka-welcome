@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const LykkaLogo = (props) => (
+export const LykkaLogo = (props) => (
   <>
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -73,5 +73,3 @@ LykkaLogo.defaultProps = {
   primarycolor: '#ffc62f',
   secondarycolor: '#94d4ca',
 };
-
-export default LykkaLogo;

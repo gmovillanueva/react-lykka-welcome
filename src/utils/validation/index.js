@@ -3,7 +3,7 @@ import * as yup from 'yup';
 import { passwordRegexCode, postalRegexCode } from '../constants';
 
 export const loginFormSchema = yup.object().shape({
-  userEmail: yup.string().required('Username is required.'),
+  userEmail: yup.string().required('User email is required.'),
   userPassword: yup.string().required('Password is required.'),
 });
 

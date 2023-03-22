@@ -5,7 +5,7 @@ import React from 'react';
 import { Center, Grid, GridItem } from '@chakra-ui/react';
 
 // Project imports
-import LykkaLogo from '../../../../components/Logo';
+import { LykkaLogo } from 'components';
 
 export const ContentVision = () => {
   return (

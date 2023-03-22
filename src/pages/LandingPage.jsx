@@ -1,11 +1,9 @@
 // Base import
 import React from 'react';
 
-import { Content, Header, Footer } from '../features/LandingPage';
+import { Header, Content, Footer } from 'features/LandingPage';
 
-// @chakra import
-
-const LandingPage = () => (
+export const LandingPage = () => (
   <>
     <Header />
     <Content />

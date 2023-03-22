@@ -2,10 +2,11 @@
 import React from 'react';
 
 // Stuff import
-import { Box, Flex, Button, Stack } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
+import { Box, Flex, Stack } from '@chakra-ui/react';
 
 // Project imports
-import LykkaLogo from '../../../../components/Logo/index';
+import { LykkaLogo } from 'components';
 
 export const Header = () => {
   return (
@@ -14,7 +15,7 @@ export const Header = () => {
         <Flex
           align='center'
           className='
-            bg-off-white
+            bg-snowdrift
             shadow-md
             fixed
             py-2
@@ -37,16 +38,8 @@ export const Header = () => {
             direction='row'
             spacing={6}
           >
-            <Button>Sign In</Button>
-            <Button
-              className='
-                bg-ocean
-                hover:bg-ocean-800
-                hidden
-                md:inline-flex'
-            >
-              Sign Up
-            </Button>
+            <Link to='/login'>Login</Link>
+            <Link to='/signup'>Sign Up</Link>
           </Stack>
         </Flex>
       </Box>

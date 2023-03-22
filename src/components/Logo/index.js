@@ -1,1 +1,1 @@
-export default from './Logo.jsx';
+export * from './Logo.jsx';
