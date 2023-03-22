@@ -1,0 +1,44 @@
+// Base imports
+import React from 'react';
+import { Navigate, useRoutes } from 'react-router-dom';
+import { ProtectedRoute } from './sharedComponents/Security/Authorization.jsx';
+
+// Dashboard imports
+import Dashboard from './components/Dashboard/Dashboard.jsx';
+
+// Page imports
+import LandingPage from './testChakraUI/LandingPage.jsx';
+import SidebarDashboard from './components/UserDashboard/components/sidebarPages/SidebarDashboard/SidebarDashboard.jsx';
+import SidebarChat from './components/UserDashboard/components/sidebarPages/SidebarChat/SidebarChat.jsx';
+import SidebarEvents from './components/UserDashboard/components/sidebarPages/SidebarEvents/SidebarEvents.jsx';
+import SidebarMapView from './components/UserDashboard/components/sidebarPages/SidebarMapView/SidebarMapView.jsx';
+import SidebarSettings from './components/UserDashboard/components/sidebarPages/SidebarSettings/SidebarSettings.jsx';
+
+const RouterWrapper = () => (
+  <ProtectedRoute>
+    <Dashboard />
+  </ProtectedRoute>
+);
+
+export default function CustomRouter() {
+  const routes = useRoutes([
+    {
+      path: '/dashboard',
+      element: <RouterWrapper />,
+      children: [
+        { element: <Navigate to='/dashboard/home' />, index: true },
+        { path: 'home', element: <SidebarDashboard /> },
+        { path: 'chat', element: <SidebarChat /> },
+        { path: 'events', element: <SidebarEvents /> },
+        { path: 'maplist', element: <SidebarMapView /> },
+        { path: 'settings', element: <SidebarSettings /> },
+      ],
+    },
+    {
+      path: '/',
+      element: <LandingPage />,
+    },
+  ]);
+
+  return routes;
+}
